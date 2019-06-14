@@ -20,22 +20,19 @@ header{
   flex-direction: row;
   justify-content: flex-end;
   align-items: flex-end;
-
 }
 article{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1
+  flex-grow: 1;
 }
 footer{
   display: flex;
   flex-direction: column;
 }
-ion-icon {
-  font-size: 32px;
-}
+
+
+
 #header-menu{
   margin: 20px;
 }
@@ -54,6 +51,20 @@ header a:visited {
 header a:hover{
   border-bottom: 3px solid white;
 }
+#center-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+.presentation-text{
+  font-size: 16px;
+}
+.presentation-text-name{
+  font-size: 68px;
+  margin: 0px;
+}
+
 #social-media-container{
   background-color: transparent
 }
@@ -68,13 +79,75 @@ footer a:link,a:visited, a{
 footer a:hover{
   border-bottom: 3px solid white;
 }
+ion-icon {
+  font-size: 32px;
+}
 
-.presentation-text{
+
+/* me styles*/
+
+#me-main-container{
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+#me-header-container{
+  font-size: 36px;
+  align-self: center;
+  margin-bottom: 0px 0px 0px 0px 
+}
+#me-left-im-container{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex-grow: 0.4;
+}
+#avatar{
+  border-radius: 50%;
+  height:150px;
+  width: 150px;
+  align-self: center
+}
+#me-bio{
+  font-size: 14px;
+  word-break: break-all;
+}
+
+#me-quote{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px
+}
+
+#me-center-education-container{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  text-align: center;
+  
+}
+#college{
+  font-size: 14px;
+  color: #a8a8a9;
+  margin: 0px 0px 0px 0px;
+  white-space: nowrap
+}
+#college:hover{
+  text-decoration: underline white
+}
+
+.me-title{
   font-size: 16px;
 }
-.presentation-text-name{
-  font-size: 68px;
-  margin: 0px;
+.me-info{
+  font-size: 14px;
+  color: #a8a8a9;
+  margin: 0px 0px 0px 0px
+}
+
+#me-right-skills-container{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
 }
 
 /* contact styles*/
