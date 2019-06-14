@@ -1,0 +1,108 @@
+*{
+  box-sizing: border-box
+}
+html{
+  height: 100%;
+  margin-right: 10px;
+  margin-left: 10px;
+  
+}
+body{
+  color: aliceblue;
+  font-family: 'Courier New', Courier, monospace;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  background: black;
+}
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+}
+article{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1
+}
+footer{
+  display: flex;
+  flex-direction: column;
+}
+ion-icon {
+  font-size: 32px;
+}
+#header-menu{
+  margin: 20px;
+}
+header a{
+  font-size: 20px;
+  margin-left: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+header a:link{
+  color: white
+}
+header a:visited {
+  color: white
+}
+header a:hover{
+  border-bottom: 3px solid white;
+}
+#social-media-container{
+  background-color: transparent
+}
+.social-media-icon{
+  background-color: transparent
+}
+
+footer a:link,a:visited, a{
+  color: white;
+  text-decoration: none;
+}
+footer a:hover{
+  border-bottom: 3px solid white;
+}
+
+.presentation-text{
+  font-size: 16px;
+}
+.presentation-text-name{
+  font-size: 68px;
+  margin: 0px;
+}
+
+/* contact styles*/
+
+#contact-container{
+  text-align: center;
+  margin: 0px 20% 0px 20%;
+  justify-content: flex-start
+  /*box-shadow: 0px 0px 56px -16px rgba(168,168,168,1);*/
+}
+#contact-header{
+  font-size: 60px;
+  font-weight: lighter;
+  
+}
+.contact-title{
+  font-size: 20px;
+}
+.contact-information{
+  font-size: 14px;
+  color: #a8a8a9
+}
+.contact-information-details{
+  font-size: 14px; 
+  color: #b6b6b6
+}
+#back-button-container{
+  position: absolute;
+  top:30px;
+  left: 0px;
+}
