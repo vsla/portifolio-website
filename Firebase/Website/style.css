@@ -37,7 +37,7 @@ footer{
   margin: 20px;
 }
 header a{
-  font-size: 20px;
+  font-size: 18px;
   margin-left: 50px;
   text-align: center;
   text-decoration: none;
@@ -88,66 +88,80 @@ ion-icon {
 
 #me-main-container{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-grow: 1;
+  margin: 0px 15% 0px 15%;
 }
 #me-header-container{
-  font-size: 36px;
+  font-size: 44px;
   align-self: center;
-  margin-bottom: 0px 0px 0px 0px 
 }
-#me-left-im-container{
+#me-first-im-container{
   display: flex;
   flex-direction: column;
   text-align: center;
   flex-grow: 0.4;
+  padding: 10px 0px 30px 0px;
 }
 #avatar{
   border-radius: 50%;
-  height:150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
   align-self: center
 }
 #me-bio{
-  font-size: 14px;
+  font-size: 16px;
   word-break: break-all;
 }
 
 #me-quote{
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
   font-size: 20px
 }
 
-#me-center-education-container{
+#me-second-education-container{
   display: flex;
   flex-direction: column;
   flex-grow: 2;
   text-align: center;
-  
+  border-top: 2px dotted #a8a8a9;
+  border-bottom: 2px dotted #a8a8a9;
+  padding: 10px 0px 30px 0px
 }
 #college{
-  font-size: 14px;
+  font-size: 16px;
   color: #a8a8a9;
-  margin: 0px 0px 0px 0px;
   white-space: nowrap
 }
 #college:hover{
   text-decoration: underline white
 }
-
 .me-title{
   font-size: 16px;
 }
 .me-info{
   font-size: 14px;
   color: #a8a8a9;
-  margin: 0px 0px 0px 0px
 }
 
-#me-right-skills-container{
+#me-third-skills-container{
   display: flex;
   flex-direction: column;
   flex-grow: 2;
+  margin-bottom: 60px;
+}
+#me-skills-container{
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  margin: 20px 15% 20px 15%;
+}
+#me-skills-container ion-icon{
+  font-size: 64px;
+}
+.me-skill-icon:hover{
+  border-bottom: 1px solid white;
 }
 
 /* contact styles*/
