@@ -5,7 +5,6 @@ html{
   height: 100%;
   margin-right: 10px;
   margin-left: 10px;
-  
 }
 body{
   color: aliceblue;
@@ -13,7 +12,7 @@ body{
   height: 95%;
   display: flex;
   flex-direction: column;
-  background: black;
+  background-color: black;
 }
 header{
   display: flex;
@@ -36,12 +35,14 @@ footer{
 #header-menu{
   margin: 20px;
 }
+
 header a{
   font-size: 18px;
   margin-left: 50px;
   text-align: center;
   text-decoration: none;
 }
+
 header a:link{
   color: white
 }
@@ -113,10 +114,16 @@ ion-icon {
   font-size: 16px;
   word-break: break-all;
 }
-
 #me-quote{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-  font-size: 20px
+  
+}
+#me-resume-link{
+  font-size: 30px;
+  color: lightseagreen;
+  justify-content: center
+}
+#me-resume-link:hover{
+  text-decoration: underline;
 }
 
 #me-second-education-container{
