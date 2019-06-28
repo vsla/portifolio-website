@@ -3,16 +3,14 @@
 }
 html{
   height: 100%;
-  margin-right: 10px;
-  margin-left: 10px;
 }
 body{
   color: aliceblue;
   font-family: 'Courier New', Courier, monospace;
-  height: 95%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: black;
+  margin: 0px
 }
 header{
   display: flex;
@@ -30,14 +28,20 @@ footer{
   flex-direction: column;
 }
 
-
+#main-cointaner{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, rgba(51,51,51,1) 0%, rgba(48,48,48,1) 36%, rgba(26,26,26,1) 72%, rgba(15,15,15,1) 100%);
+}
 
 #header-menu{
   margin: 20px;
 }
 
 header a{
-  font-size: 18px;
+  font-size: 26px;
   margin-left: 50px;
   text-align: center;
   text-decoration: none;
@@ -59,11 +63,12 @@ header a:hover{
   flex-grow: 1;
 }
 .presentation-text{
-  font-size: 16px;
+  font-size: 24px;
 }
 .presentation-text-name{
-  font-size: 68px;
+  font-size: 80px;
   margin: 0px;
+  font-weight: 500;
 }
 
 #social-media-container{
@@ -91,7 +96,6 @@ ion-icon {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  margin: 0px 15% 0px 15%;
 }
 #me-header-container{
   font-size: 44px;
@@ -119,7 +123,7 @@ ion-icon {
 }
 #me-resume-link{
   font-size: 30px;
-  color: lightseagreen;
+  color: rgb(0, 255, 225);
   justify-content: center
 }
 #me-resume-link:hover{
@@ -172,12 +176,17 @@ ion-icon {
 }
 
 /* contact styles*/
-
+#contact-main-container{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center
+}
 #contact-container{
   text-align: center;
-  margin: 0px 20% 0px 20%;
-  justify-content: flex-start
-  /*box-shadow: 0px 0px 56px -16px rgba(168,168,168,1);*/
+  margin: 0px 25% 0px 25%;
+  justify-content: flex-start;
+  box-shadow: -5px 5px 15px 1px rgba(37, 33, 33, 1);
 }
 #contact-header{
   font-size: 60px;
@@ -185,14 +194,16 @@ ion-icon {
   
 }
 .contact-title{
-  font-size: 20px;
+  font-size: 28px;
+  margin-bottom: 5px
 }
 .contact-information{
-  font-size: 14px;
-  color: #a8a8a9
+  font-size: 20px;
+  color: #a8a8a9;
+  margin-top: 0px
 }
 .contact-information-details{
-  font-size: 14px; 
+  font-size: 20px; 
   color: #b6b6b6
 }
 #back-button-container{
