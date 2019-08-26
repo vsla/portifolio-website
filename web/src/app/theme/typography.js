@@ -43,7 +43,7 @@ export default {
     fontWeight: '500',
     fontSize: '14px',
     letterSpacing: '-0.05px',
-    lineHeight: '20px'
+    fontFamily: "'Raleway', sans-serif"
   },
   subtitle1: {
     color: palette.text.primary,

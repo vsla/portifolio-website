@@ -1,11 +1,4 @@
 .Presentation{
-  background: rgba(20,175,227,1);
-  background: -moz-linear-gradient(left, rgba(20,175,227,1) 0%, rgba(31,153,194,1) 42%, rgba(7,103,135,1) 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(20,175,227,1)), color-stop(42%, rgba(31,153,194,1)), color-stop(100%, rgba(7,103,135,1)));
-  background: -webkit-linear-gradient(left, rgba(20,175,227,1) 0%, rgba(31,153,194,1) 42%, rgba(7,103,135,1) 100%);
-  background: -o-linear-gradient(left, rgba(20,175,227,1) 0%, rgba(31,153,194,1) 42%, rgba(7,103,135,1) 100%);
-  background: -ms-linear-gradient(left, rgba(20,175,227,1) 0%, rgba(31,153,194,1) 42%, rgba(7,103,135,1) 100%);
-  background: linear-gradient(to right, rgba(20,175,227,1) 0%, rgba(31,153,194,1) 42%, rgba(7,103,135,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#14afe3', endColorstr='#076787', GradientType=1 );
-  min-height: 600px,
+  background: #404040;
+  min-height: 700px
 }
