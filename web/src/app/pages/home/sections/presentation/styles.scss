@@ -1,4 +1,71 @@
 .Presentation{
-  background: #404040;
-  min-height: 700px
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  background: -webkit-linear-gradient(-45deg,rgba(38, 46, 51, 0.7) 0,rgba(49, 51, 56, 0.7) 40%,rgba(26, 29, 36, 0.7) 90%);
+  .container{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    .paper_title{
+      background: white;
+      padding: 10px;
+      border-radius: 5px;
+      .title2{
+        font-size: 40px;
+        line-height: 1;
+        border-right: 1px solid black;
+        padding-right: 4px;
+        @media (max-width: 425px) {
+          font-size: 30px;
+        }
+      }
+      .title{
+        font-size: 35px;
+        line-height: 1;
+        border-right: 1px solid black;
+        padding-right: 2px;
+        @media (max-width: 425px) {
+          font-size: 25px;
+        }
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        white-space: nowrap; /* Keeps the content on a single line */
+        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+        letter-spacing: .15em; /* Adjust as needed */
+        animation: 
+          typing 6s steps(40, end) infinite,
+          blink-caret .75s step-end infinite;
+      }
+      
+      /* The typing effect */
+      @keyframes typing {
+        0% { width: 0.5% }
+        10% { width: 100% }
+        90% { width: 100% }
+        100% { width: 0.5% }
+      }
+      
+      /* The typewriter cursor effect */
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color:  black; }
+      }
+    }
+    .paper_subtitle{
+      background: white;
+      padding: 5px;
+      border-radius: 5px;
+      width: 50%;
+      @media (max-width: 425px) {
+        width: 70%;
+      }
+      .subtitle{
+        font-size: 20px;
+        @media (max-width: 425px) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  
 }

@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
-import { fade, makeStyles, withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom'
-import {AppBar, Container} from '@material-ui/core';
+import {AppBar, Container, Grid} from '@material-ui/core';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import MoreIcon from '@material-ui/icons/MoreVert';
+import ReactDOM from 'react-dom';
 
 const Styles = theme => ({
   grow: {
     flexGrow: 1,
   },
-  appBar:{
+  topAppBar:{
     backgroundColor: 'transparent',
+    boxShadow: '0px 0px 0px 0px',
+    alignItems: 'center'
+  },
+  whiteAppBar:{
+    backgroundColor: 'white',
     boxShadow: '0px 0px 0px 0px',
     alignItems: 'center'
   },
@@ -31,21 +31,27 @@ const Styles = theme => ({
   selectedMenu: {
     padding: theme.spacing(2),
     color: '#adaaaa',
-    fontSize: '15px',
+    fontSize: '17px',
   },
   notSelectedMenu: {
     padding: theme.spacing(2),
     color: 'white',
-    fontSize: '15px',
+    fontSize: '17px',
     '&:hover':{
-      textDecoration :'underline white',
+      color: '#dbdbdb'
     }
   },
   title: {
     fontWeight: '800',
-    color: 'white',
+    color: 'black',
+    backgroundColor: 'white',
+    padding: '6px',
+    paddingTop: '0px',
+    paddingBottom: '0px',
+    borderRadius: '2px',
     letterSpacing: '1px',
     fontSize: '30px',
+    lineHeight: 1.2
   },
   sectionDesktop: {
     display: 'none',
@@ -64,10 +70,11 @@ const Styles = theme => ({
 class Header extends Component {
   constructor(props){
     super(props)
+    const {classes} = this.props
     this.state = {
-      anchorEl: null,
-      mobileMoreAnchorEl: null,
-      links: ['Home', 'About', 'Projects', 'Resume', 'Contact']
+      openSideMenu: false,
+      links: ['Home', 'About', 'Projects', 'Contact'],
+      className: classes.topAppBar
     }
   }
 
@@ -76,7 +83,7 @@ class Header extends Component {
     return this.state.links.map((linkName) => {
       if (linkName !== 'Home'){
         return(
-          <Link to="#" className={classes.link}>
+          <Link to="#" className={classes.link} >
             <Typography className={classes.notSelectedMenu} variant="h6" >
               {linkName}
             </Typography>
@@ -92,72 +99,34 @@ class Header extends Component {
     })
   }
 
-  renderMenu = () => {
-    return (
-    <Menu
-      anchorEl={this.state.anchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={this.state.anchorEl}
-      onClose={() => {}}
-    >
-      <MenuItem onClick={() => {}}>Profile</MenuItem>
-      <MenuItem onClick={() => {}}>My account</MenuItem>
-    </Menu>
-    )
-  };
+  handleScroll() { 
+    console.log(document.documentElement.scrollTop);
+    const {classes} = this.props
+    
+    if (document.documentElement.scrollTop > 140) {
+      this.setState({
+        className: classes.whiteAppBar
+      })
+    } else {
+      this.setState({
+        className: classes.topAppBar
+      })
+    }
 
-  
-  renderMobileMenu = () => {
-    return(
-      <Menu
-        anchorEl={this.state.mobileMoreAnchorEl}
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        keepMounted
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        open={this.state.isMobileMenuOpen}
-        onClose={() => {}}
-      >
-        <MenuItem>
-          <IconButton aria-label="show 4 new mails" color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <MailIcon />
-            </Badge>
-          </IconButton>
-          <p>Messages</p>
-        </MenuItem>
-        <MenuItem>
-          <IconButton aria-label="show 11 new notifications" color="inherit">
-            <Badge badgeContent={11} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
-          <p>Notifications</p>
-        </MenuItem>
-        <MenuItem onClick= {() => {}}>
-          <IconButton
-            aria-label="account of current user"
-            aria-controls="primary-search-account-menu"
-            aria-haspopup="true"
-            color="inherit"
-          >
-            <AccountCircle />
-          </IconButton>
-          <p>Profile</p>
-        </MenuItem>
-      </Menu>
-    )
+   }
+ 
+  componentDidMount() {
+    window.onscroll = () => this.handleScroll()
   }
 
   render(){
     const {classes} = this.props
-    console.log(this.props)
+    
     return (
-      <div className={classes.grow}>
-        <AppBar position="static" className={classes.appBar} > 
+      <div style={{ width: '100%' }}> 
+        <AppBar id='appbar' position="fixed" className={this.state.className} > 
           <Container maxWidth="lg">
-            <Toolbar style={{ width: '90%' }}>
+            <Toolbar style={{ width: '100%', padding: 0}}>
               <Typography className={classes.title} variant="h6" noWrap>
                 ATTAR
               </Typography>
@@ -166,20 +135,39 @@ class Header extends Component {
                 { this.RenderLinks() }
               </div>
               <div className={classes.sectionMobile}>
-              <IconButton
-                edge="end"
-                className={classes.selectedMenu}
-                color="inherit"
-                aria-label="open drawer"
-              >
-                <MenuIcon />
-              </IconButton>
-            </div>
+                <IconButton
+                  edge="end"
+                  onClick={(e) => this.setState({ openSideMenu: e.currentTarget })}
+                  // onClick={(e) => this.setState({ openSideMenu: true })}
+                  className={classes.selectedMenu}
+                  color="inherit"
+                  aria-label="open drawer"
+                >
+                  <MenuIcon />
+                </IconButton>
+              </div>
             </Toolbar>
           </Container>
         </AppBar>
-        {this.renderMobileMenu()}
-        {this.renderMenu()}
+        {/* <SwipeableDrawer
+          anchor="right"
+          open={this.state.openSideMenu}
+          onClose={() => this.setState({ openSideMenu: false })}
+          // onOpen={toggleDrawer('right', true)}
+        >
+          oi
+        </SwipeableDrawer> */}
+        <Menu
+          id="open drawer"
+          anchorEl={this.state.openSideMenu}
+          keepMounted
+          open={Boolean(this.state.openSideMenu)}
+          onClose={() => this.setState({ openSideMenu: null })}
+        >
+          <MenuItem onClick={() => {}}>Profile</MenuItem>
+          <MenuItem onClick={() => {}}>My account</MenuItem>
+          <MenuItem onClick={() => {}}>Logout</MenuItem>
+        </Menu>
       </div>
     );
   }
