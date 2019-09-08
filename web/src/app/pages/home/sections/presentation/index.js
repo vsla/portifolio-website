@@ -11,13 +11,13 @@ export default class Presentation extends Component {
   }
   render() {
     return (
-      <div style={{ backgroundImage: 'url(' + myphoto + ')', backgroundSize: 'cover', backgroundPosition: 'center center'}}>
+      <Grid container style={{ backgroundImage: 'url(' + myphoto + ')', backgroundSize: 'cover', backgroundPosition: 'center center' }}>
         {/* Above have the background photo, under have the filter on the image */}
         <Grid container className='Presentation' >
-          
-          <Container maxWidth="lg" className='container'> 
-            <Header/>
-            <Grid container alignItems='center' style={{flexGrow: 1}}>
+
+          <Container maxWidth="lg" className='container'>
+            <Header />
+            <Grid container alignItems='center' className='text_area'>
               <Grid item>
                 <Grid container direction='column' spacing={2}>
                   <Grid item >
@@ -26,16 +26,15 @@ export default class Presentation extends Component {
                     </Paper>
                   </Grid>
                   <Grid item >
-                    <Paper className='paper_subtitle' >
-                      <Typography className='subtitle'> I'm a web developer! </Typography>
-                    </Paper>
+                      <Typography className='subtitle'> I'm a junior <u>Web Developer</u>, still in college but always learning from life.<br/>
+                      My knowledge is in web and mobile development. </Typography>
                   </Grid>
                 </Grid>
               </Grid>
             </Grid>
           </Container>
         </Grid>
-      </div>
+      </Grid>
     )
   }
 }

@@ -41,6 +41,11 @@ const Styles = theme => ({
       color: '#dbdbdb'
     }
   },
+  mobileMenu: {
+    padding: theme.spacing(2),
+    color: '#737373',
+    fontSize: '17px',
+  },
   title: {
     fontWeight: '800',
     color: 'black',
@@ -73,7 +78,8 @@ class Header extends Component {
     const {classes} = this.props
     this.state = {
       openSideMenu: false,
-      links: ['Home', 'About', 'Projects', 'Contact'],
+      // links: ['Home', 'About', 'Projects', 'Contact'],
+      links: ['Home'],
       className: classes.topAppBar
     }
   }
@@ -164,9 +170,13 @@ class Header extends Component {
           open={Boolean(this.state.openSideMenu)}
           onClose={() => this.setState({ openSideMenu: null })}
         >
-          <MenuItem onClick={() => {}}>Profile</MenuItem>
-          <MenuItem onClick={() => {}}>My account</MenuItem>
-          <MenuItem onClick={() => {}}>Logout</MenuItem>
+          <MenuItem onClick={() => {}}>
+            <Link to="#" className={classes.link} >
+              <Typography className={classes.mobileMenu} variant="h6" >
+                home
+              </Typography>
+            </Link>
+          </MenuItem>
         </Menu>
       </div>
     );
