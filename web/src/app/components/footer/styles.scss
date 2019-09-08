@@ -1,0 +1,30 @@
+.footer{
+  background: black;
+  width: 100% ;
+  padding: 15px;
+  // margin-top: 10px;
+  .copy_container{
+    @media (max-width: 467px) {
+      display: flex;
+      flex-grow: 1;
+      justify-content: center
+    }
+    .copy{
+      color: white
+    } 
+  }
+  .social_item{
+    @media (max-width: 467px) {
+      display: flex;
+      flex-grow: 1;
+      justify-content: center
+    }
+    .social_container{
+      @media (max-width: 467px) {
+        display: flex;
+        flex-grow: 1;
+        justify-content: center
+      }
+    }
+  }
+}
