@@ -67,6 +67,7 @@
       .subtitle{
         color: white;
         font-size: 18px;
+        line-height: 1.5;
         @media (max-width: 660px) {
           max-width: 450px;
           font-size: 16px;
@@ -75,4 +76,8 @@
     }
   }
   
+}
+
+.skills{
+  min-height: 700px; 
 }

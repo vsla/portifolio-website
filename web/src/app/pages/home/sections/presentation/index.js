@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Grid, Typography, Container, Paper } from '@material-ui/core'
 import { Header } from '../../../../components'
-import './styles.scss'
+import '../styles.scss'
 
 import myphoto from '.././../../../common/images/myphoto.jpg'
 

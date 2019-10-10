@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Grid, Container } from '@material-ui/core';
-import { Presentation } from './sections';
+import { Presentation, Skills } from './sections';
 import { Footer } from '../../components';
 
 export default class Home extends Component {
@@ -8,6 +8,7 @@ export default class Home extends Component {
     return (
       <Grid container style={{ minHeight: '100vh' }} >
         <Presentation/>
+        <Skills/>
         {/* <Grid container style={{ minHeight: '100%' }}></Grid> */}
         <Footer/>
       </Grid>
