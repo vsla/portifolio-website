@@ -11,13 +11,13 @@ export default class Presentation extends Component {
   }
   render() {
     return (
-      <Grid container style={{ backgroundImage: 'url(' + myphoto + ')', backgroundSize: 'cover', backgroundPosition: 'center center' }}>
+      <Grid container style={{ backgroundImage: 'url(' + myphoto + ')', backgroundSize: 'cover', backgroundPosition: 'center center', flexGrow: 1 }}>
         {/* Above have the background photo, under have the filter on the image */}
         <Grid container className='Presentation' >
 
           <Container maxWidth="lg" className='container'>
             <Header />
-            <Grid container alignItems='center' className='text_area'>
+            <Grid container style={{padding: '50px 0px'}} alignItems='flex-end' className='text_area'>
               <Grid item>
                 <Grid container direction='column' spacing={2}>
                   <Grid item >
